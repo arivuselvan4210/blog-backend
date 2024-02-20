@@ -1,0 +1,23 @@
+const express = require("express");
+const mongooes = require("mongoose");
+const router = require("./router/user");
+const blogrouter = require("./router/blog");
+const cors = require("cors");
+const app = express();
+app.use(express.json());
+app.use(cors());
+app.use("/", router);
+app.use("/blog", blogrouter);
+app.listen(5000, () => {
+  console.log("servser launch");
+});
+mongooes
+  .connect(
+    "mongodb+srv://arivuselvan4210:Arivu0707@cluster0.zw6zoar.mongodb.net/"
+  )
+  .then(() => {
+    console.log("connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
