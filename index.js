@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(
   {
-    origin:["blog-forntend.vercel.app"],
+    origin:["https://blog-forntend.vercel.app"],
     methods:["POST","GET"],
     credentials:true
   }
