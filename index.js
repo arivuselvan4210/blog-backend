@@ -5,7 +5,10 @@ const blogrouter = require("./router/blog");
 const cors = require("cors");
 const app = express();
 app.use(express.json());
-app.use( cors());
+app.use( cors({
+   origin: 'https://blog-forntend.vercel.app',
+  optionsSuccessStatus: 200,
+}));
 app.use("/", router);
 app.use("/blog", blogrouter);
 app.listen(5000, () => {
