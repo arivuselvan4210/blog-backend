@@ -7,16 +7,15 @@ const app = express();
 app.use(express.json());
 app.use( cors({
    origin: 'https://blog-forntend.vercel.app',
-  optionsSuccessStatus: 200,
+   optionsSuccessStatus: 200,
 }));
 app.use("/", router);
 app.use("/blog", blogrouter);
-app.listen(5000, () => {
+app.listen(5000||'https://blog-forntend.vercel.app', () => {
   console.log("servser launch");
 });
 mongooes
   .connect(
-    "mongodb+srv://arivuselvan4210:Arivu0707@cluster0.zw6zoar.mongodb.net/"
    "mongodb+srv://arivuselvan4210:Arivu0707@cluster0.zw6zoar.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
