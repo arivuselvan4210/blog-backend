@@ -14,6 +14,7 @@ app.listen(5000, () => {
 mongooes
   .connect(
     "mongodb+srv://arivuselvan4210:Arivu0707@cluster0.zw6zoar.mongodb.net/"
+   "mongodb+srv://arivuselvan4210:Arivu0707@cluster0.zw6zoar.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
     console.log("connected");
