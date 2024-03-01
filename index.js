@@ -11,7 +11,7 @@ app.use( cors({
 }));
 app.use("/", router);
 app.use("/blog", blogrouter);
-app.listen(5000||'https://blog-forntend.vercel.app', () => {
+app.listen(5000, () => {
   console.log("servser launch");
 });
 mongooes
