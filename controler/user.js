@@ -32,12 +32,13 @@ module.exports.singin = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
+
     if (user) {
       const hase = await bcrypt.compare(password, user.password);
       if (hase) {
         return res.status(201).json(user);
       }
-      return res.status(402).json("password incorrected");
+      return res.status(402).json({ message: "password incorrected" });
     }
     res.status(404).json({ message: "user null" });
   } catch (error) {
